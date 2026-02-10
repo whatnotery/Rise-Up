@@ -1,6 +1,5 @@
 ---
-title: Weddings
+title: Wedding Catering
 permalink: "/weddings"
 layout: wedding
 ---
-

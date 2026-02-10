@@ -1,6 +1,5 @@
 ---
-title: Catering
+title: Event Catering
 permalink: "/catering"
 layout: catering
 ---
-

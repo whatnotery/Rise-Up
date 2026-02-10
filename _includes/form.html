@@ -1,1 +1,63 @@
-form
+<form id="form" action="https://api.web3forms.com/submit" method="POST">
+    <input
+        type="hidden"
+        name="access_key"
+        value="df9bcfeb-3c56-48fc-9ae4-50f746d31504"
+    />
+    <input
+        type="hidden"
+        name="subject"
+        value="New Inquiry about {{page.title}}"
+    />
+    <input type="hidden" name="from_name" value="Rise Up Catering Form" />
+    <input
+        type="hidden"
+        name="redirect"
+        value="{{site.url}}/{{site.baseurl}}/thanks"
+    />
+    * indicates required
+    <div>
+        <label for="first_name">First Name *</label>
+        <input type="text" id="first_name" name="first_name" required />
+    </div>
+    <div>
+        <label for="last_name">Last Name *</label>
+        <input type="text" id="last_name" name="last_name" required />
+    </div>
+    <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+    </div>
+    <div>
+        <label for="phone_number">Phone Number</label>
+        <input type="tel" id="phone_number" name="phone_number" />
+    </div>
+    <div>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    <div>
+        <label for="event_date">Event Date</label>
+        <input type="date" id="event_date" name="event_date" />
+    </div>
+    <div>
+        <label for="event_location">Event Location</label>
+        <input type="text" id="event_location" name="event_location" />
+    </div>
+    <div>
+        <label for="crowd_size">Crowd Size</label>
+        <input type="number" id="crowd_size" name="crowd_size" />
+    </div>
+    <div>
+        <label for="number_of_other_food_trucks_if_any"
+            >Number of Other Food Trucks (if any)
+        </label>
+        <input
+            type="number"
+            id="number_of_other_food_trucks_if_any"
+            name="number_of_other_food_trucks_if_any"
+        />
+    </div>
+    <div class="h-captcha" data-captcha="true"></div>
+    <button type="submit">Submit</button>
+</form>
