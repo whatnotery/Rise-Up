@@ -1,5 +1,6 @@
 ---
+title: Weddings
+permalink: "/weddings"
 layout: wedding
-title: "Weddings"
-permalink: /weddings
 ---
+

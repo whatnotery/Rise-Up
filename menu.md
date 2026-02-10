@@ -1,5 +1,6 @@
 ---
+title: Menu
+permalink: "/menu"
 layout: menu
-title: "Menu"
-permalink: /menu
 ---
+

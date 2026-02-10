@@ -1,5 +1,6 @@
 ---
+title: Schedule
+permalink: "/schedule"
 layout: schedule
-title: "Schedule"
-permalink: /schedule
 ---
+

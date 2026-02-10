@@ -1,5 +1,6 @@
 ---
+title: Catering
+permalink: "/catering"
 layout: catering
-title: "Catering"
-permalink: /catering
 ---
+
