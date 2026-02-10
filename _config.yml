@@ -2,14 +2,14 @@
 title: Rise Up Pizza
 timezone: UTC
 collections:
+  pages:
+    title: Pages
+    output: true
   posts:
     title: Posts
     output: true
   uploads:
     title: Uploads
-    output: true
-  pages:
-    title: pages
     output: true
 url: https://riseuppizza.com
 baseurl: "/Rise-Up"
