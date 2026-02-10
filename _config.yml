@@ -1,9 +1,23 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://riseuppizza.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "Jekyll + Tailwind" # the name of your site, e.g. ACME Corp.
+title: "Rise Up Pizza" # the name of your site, e.g. ACME Corp.
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 
 plugins:
   - jekyll-postcss
+  - jekyll-ical-tag
+  - jekyll-seo-tag
+
+navigation:
+  order:
+    - /
+    - /menu.html
+    - /schedule.html
+    - /catering.html
+    - /weddings.html
 
 sass:
   sourcemap: never

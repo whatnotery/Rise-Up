@@ -1,0 +1,79 @@
+name: Deploy Site
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  push:
+    branches: ["main"] # Chasge to your default branch if different
+  pull_request:
+    branches: ["main"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3" # Use Ruby version compatible with your Jekyll setup
+          bundler-cache: true
+
+      - name: Setup Node.js (if needed for assets)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          # Install Bundler if not present
+          gem install bundler
+          # Install gems from Gemfile
+          bundle install
+          # Install npm packages if package.json exists
+          if [ -f "package.json" ]; then
+            npm ci
+          fi
+
+      - name: Build Jekyll site
+        run: |
+          # Make the build script executable if it exists
+          if [ -f "bin/build-prod" ]; then
+            chmod +x bin/build-prod
+            bin/build-prod
+          else
+            echo "bin/build-prod not found, using standard Jekyll build"
+            bundle exec jekyll build --destination _site
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
