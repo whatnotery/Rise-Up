@@ -1,5 +1,5 @@
 url: "https://riseuppizza.com" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/Rise-Up" # the subpath of your site, e.g. /blog
 title: "Rise Up Pizza" # the name of your site, e.g. ACME Corp.
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
