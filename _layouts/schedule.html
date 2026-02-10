@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+{% assign yesterday = 'now' | date: '%s' | minus: 86400 | date: '%Y-%m-%d' %} {%
+ical url:
+'https://calendar.proton.me/api/calendar/v1/url/SwPCXVpOnj2QKZAgCyKoxvNnBg1HUajO11UUFx5PgfpCjfnQ3PVHf_nefCTk_SrN4EEMLMBhM5DrbYjIjQYIPQ==/calendar.ics?CacheKey=Xd7UnIDuhZwpUJIDxEnfhg%3D%3D&PassphraseKey=9H8Mk4z1jvoG5eQCZV6_AV6SzrMtktyethALFY1yjAE%3D'
+after_date: yesterday limit: 4 %} {{ event.summary }} {{ event.description }} {{
+event.start_time | date: '%A %B %d' }} {{ event.start_time | date: '%-I:%M %P'
+}} - {{ event.end_time | date: '%-I:%M %P' }} {{ event.location}} {% endical %}
