@@ -2,9 +2,6 @@
 title: Rise Up Pizza
 timezone: UTC
 collections:
-  pages:
-    title: Pages
-    output: true
   posts:
     title: Posts
     output: true
