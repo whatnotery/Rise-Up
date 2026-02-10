@@ -1,35 +1,20 @@
-<!-- _includes/navigation.html -->
-{% comment %} Navigation using order defined in _config.yml {% endcomment %} {%
-assign nav_order = site.navigation.order | default: "" %}
-
-<nav class="site-nav">
-    <ul class="nav-list">
-        {% comment %} First, render pages in the defined order {% endcomment %}
-        {% if nav_order.size > 0 %} {% for nav_item in nav_order %} {% comment
-        %} Find the page with matching URL {% endcomment %} {% assign nav_page =
-        site.pages | where: "url", nav_item | first %} {% if nav_page %}
-        <li class="nav-item">
+<nav>
+    <ul>
+        {% for item in site.navigation.items %}
+        <li>
             <a
-                href="{{ nav_page.url | relative_url }}"
-                class="nav-link {% if page.url == nav_page.url %}active{% endif %}"
+                href="{{ site.baseurl }}{{ item.url }}"
+                {%
+                if
+                page.url="item.url"
+                %}class="active"
+                {%
+                endif
+                %}
             >
-                {{ nav_page.title | default: nav_page.name | remove: '.html' |
-                capitalize }}
+                {{ item.title }}
             </a>
         </li>
-        {% endif %} {% endfor %} {% else %} {% comment %} Fallback to
-        alphabetical if no order defined {% endcomment %} {% assign sorted_pages
-        = site.pages | sort: "title" %} {% for p in sorted_pages %} {% assign
-        path_depth = p.url | split: '/' | size %} {% if path_depth == 2 and
-        p.url != '/404.html' %}
-        <li class="nav-item">
-            <a
-                href="{{ p.url | relative_url }}"
-                class="nav-link {% if page.url == p.url %}active{% endif %}"
-            >
-                {{ p.title | default: p.name | remove: '.html' | capitalize }}
-            </a>
-        </li>
-        {% endif %} {% endfor %} {% endif %}
+        {% endfor %}
     </ul>
 </nav>
