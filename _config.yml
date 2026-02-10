@@ -8,6 +8,9 @@ collections:
   uploads:
     title: Uploads
     output: true
+  pages:
+    title: pages
+    output: true
 url: https://riseuppizza.com
 baseurl: "/Rise-Up"
 description: Write an awesome description for your new site here. You can edit this
