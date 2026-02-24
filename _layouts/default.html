@@ -1,9 +1,40 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
     {% include head.html %}
-  <body>
-    {% include nav.html %}
+  <body class="bg-gray-950 text-white flex flex-row min-h-screen">
+      <button id="menuButton" class="md:hidden m-4 px-4 py-2 bg-gray-800 text-white rounded w-fit">
+        ☰ Menu
+      </button>
+    {% include sidebar.html %}
+
     {{ content }}
-    {% include footer.html %}
+
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+
+        <script>
+          const sidebar = document.getElementById('sidebar');
+          const menuButton = document.getElementById('menuButton');
+          const closeButton = document.getElementById('closeSidebar');
+          const overlay = document.getElementById('overlay');
+
+          function openSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            if (overlay) overlay.classList.remove('hidden');
+          }
+
+          function closeSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            if (overlay) overlay.classList.add('hidden');
+          }
+
+          if (menuButton) menuButton.addEventListener('click', openSidebar);
+          if (closeButton) closeButton.addEventListener('click', closeSidebar);
+          if (overlay) overlay.addEventListener('click', closeSidebar);
+
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+          });
+        </script>
+
   </body>
 </html>

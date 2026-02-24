@@ -1,0 +1,50 @@
+<div class="flex flex-row">
+    <aside id="sidebar" class="w-64 bg-gray-800 text-white fixed md:static inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform z-30">
+
+          <!-- Close button inside sidebar (mobile only) -->
+          <button id="closeSidebar" class="md:hidden absolute top-4 right-4 text-white hover:text-gray-300">
+            ✕
+          </button>
+
+          <img src="{{ "/assets/imgs/logo.png" | relative_url }}" alt="Rise Up Pizza Logo" class="ml-20 w-64 h-64 mb-4">
+
+          <nav class="flex flex-col justify-start gap-y-2 text-sm uppercase tracking-widest mb-12">
+            <ul>
+              {% for item in site.navigation.items %}
+              <li>
+                {% if page.url == item.url %}
+                  <a href="{{ site.baseurl }}{{ item.url }}" class="text-red-500 nav-hover font-medium"> ♦ {{item.title}}</a>
+                {% else %}
+                  <a href="{{ site.baseurl }}{{ item.url }}" class="text-white nav-hover font-medium"> <span class="text-red-500">➼</span> {{item.title}}</a>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+
+          <div class="px-4">
+            <span class="text-red-500">Hours</span>
+            <ul>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+              <li>Sun</li>
+            </ul>
+
+            471 Jefferson St, <br>Lexington, KY 40508<br>
+            <a href="https://www.google.com/maps/dir//471+Jefferson+St,+Lexington,+KY+40508/@38.0513494,-84.5023556,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x884244f692bc4325:0x3d869cf38ea75593!2m2!1d-84.4947573!2d38.0579769?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D" class="text-red-500">
+              <strong>Get Directions</strong>
+            </a>
+          </div>
+        </aside>
+</aside>
+
+{% if page.url == "/" %}
+{% else %}
+<img src="{{ "/assets/imgs/sidebar.jpg" | relative_url }}" alt="Rise Up Pizza Logo" class="w-30">
+{% endif %}
+
+</div>
