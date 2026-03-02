@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Berlin Sans FB Demi Bold";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Berlin Sans FB Demi Bold"),
+        url("../fonts/BRLNSDB.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Myriad Pro Regular";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Myriad Pro Regular"),
+        url("../fonts/MYRIADPRO-REGULAR.woff") format("woff");
+}
+
+.font-berlin-sans {
+    font-family: "Berlin Sans FB Demi Bold", sans-serif;
+}
+
+.font-myriad {
+    font-family: "Myriad Pro Regular", sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
