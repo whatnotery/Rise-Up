@@ -1,11 +1,11 @@
-{% if page.url != '/' %}
+{% unless page.url == '/' %}
 <button
     id="closeSidebar"
     class="fixed top-2 right-2 z-40 text-red-500 text-3xl md:hidden"
 >
     ⓧ
 </button>
-{% endif %}
+{% endunless %}
 <button
     id="menuButton"
     class="md:hidden fixed top-2 right-2 z-40 text-red-500 text-3xl"

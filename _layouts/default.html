@@ -8,7 +8,7 @@
 
     <main id="main" class="h-full flex flex-col justify-center items-center w-full">
         <div>
-        <div class="flex flex-row   w-full gap-1 md:gap-2 py-4 px-2 md:px-4 block md:hidden">
+        <div class="flex flex-row w-full gap-1 md:gap-2 py-4 px-2 md:px-4 block md:hidden">
             <img src="{{ "/assets/imgs/logosymbolleft.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
             <img src="{{ "/assets/imgs/logomobile.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-2/4 object-contain">
             <img src="{{ "/assets/imgs/logosymbolright.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
@@ -17,8 +17,15 @@
 
 
         <img src="{{ "/assets/imgs/mobileheader.jpg" | relative_url }}" alt="an image of Delicious Pizza" class="md:ml-32 block md:hidden w-full h-auto">
-        <h1 class="text-4xl text-red-500 font-myriad"> {% unless page.url == '/' %}{{ page.title }}{% endunless %} </h1>
+        {% if page.url == '/' %}<div
+            class="flex flex-col h-screen">
+                <img src="{{ "/assets/imgs/shop.png" | relative_url }}" id="logo" alt="image of the restaurant" class="object-cover w-full h-full">
+            </div>
+            {% endif %}
+        <div class="w-full pt-14 pl-12 flex flex-col">
+        <h1 class="text-4xl text-red-500 font-myriad"> {% unless page.url == '/' %} {{page.title}}{% endunless %}   </h1>
       {{ content }}
+        </div>
     </main>
 
     <div id="overlay" class="fixed inset-0 bg-black z-20 hidden md:hidden"></div>
