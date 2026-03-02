@@ -34,6 +34,15 @@ navigation:
       url: "/catering"
     - title: Weddings
       url: "/weddings"
+openhours:
+  - Monday: "Closed"
+  - Tuesday: "11-9"
+  - Wednesday: "11-9"
+  - Thursday: "11-9"
+  - Friday: "11-9"
+  - Saturday: "11-9"
+  - Sunday: "Closed"
+
 sass:
   sourcemap: never
 postcss:

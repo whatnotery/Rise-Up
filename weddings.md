@@ -1,5 +1,17 @@
 ---
 title: Wedding Catering
 permalink: "/weddings"
-layout: wedding
+layout: form
 ---
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings
+Lorem ipsum about catering weddings

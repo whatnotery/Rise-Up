@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-    {% include head.html %}
-  <body class="bg-gray-950 text-white flex flex-row min-h-screen">
-      <button id="menuButton" class="md:hidden m-4 px-4 py-2 bg-gray-800 text-white rounded w-fit">
-        ☰ Menu
-      </button>
+  {% include head.html %}
+  <body class="bg-black flex flex-row justify-center font-myriad text-white min-h-screen"  data-is-homepage="{% if page.url == '/' %}true{% else %}false{% endif %}">
+
+    {% include nav_buttons.html %}
     {% include sidebar.html %}
 
-    {{ content }}
+    <main id="main" class="h-full flex flex-col justify-center items-center w-full">
+        <div>
+        <div class="flex flex-row   w-full gap-1 md:gap-2 py-4 px-2 md:px-4 block md:hidden">
+            <img src="{{ "/assets/imgs/logosymbolleft.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
+            <img src="{{ "/assets/imgs/logomobile.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-2/4 object-contain">
+            <img src="{{ "/assets/imgs/logosymbolright.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
+        </div>
+        </div>
 
-    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
 
-        <script>
-          const sidebar = document.getElementById('sidebar');
-          const menuButton = document.getElementById('menuButton');
-          const closeButton = document.getElementById('closeSidebar');
-          const overlay = document.getElementById('overlay');
+        <img src="{{ "/assets/imgs/mobileheader.jpg" | relative_url }}" alt="an image of Delicious Pizza" class="md:ml-32 block md:hidden w-full h-auto">
+        <h1 class="text-4xl text-red-500 font-myriad"> {% unless page.url == '/' %}{{ page.title }}{% endunless %} </h1>
+      {{ content }}
+    </main>
 
-          function openSidebar() {
-            sidebar.classList.remove('-translate-x-full');
-            if (overlay) overlay.classList.remove('hidden');
-          }
-
-          function closeSidebar() {
-            sidebar.classList.add('-translate-x-full');
-            if (overlay) overlay.classList.add('hidden');
-          }
-
-          if (menuButton) menuButton.addEventListener('click', openSidebar);
-          if (closeButton) closeButton.addEventListener('click', closeSidebar);
-          if (overlay) overlay.addEventListener('click', closeSidebar);
-
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeSidebar();
-          });
-        </script>
-
+    <div id="overlay" class="fixed inset-0 bg-black z-20 hidden md:hidden"></div>
+    <script src="{{ "/assets/js/scripts.js" | relative_url }}"></script>
   </body>
 </html>

@@ -1,50 +1,67 @@
-<div class="flex flex-row">
-    <aside id="sidebar" class="w-64 bg-gray-800 text-white fixed md:static inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform z-30">
+<div id="sidebar" class="flex flex-row -translate-x-full  md:translate-x-0 hidden md:block">
+    <aside class="w-full md:w-52 lg:w-64  text-white  inset-y-0 left-0 transform  transition-transform z-30">
+        <div>
 
-          <!-- Close button inside sidebar (mobile only) -->
-          <button id="closeSidebar" class="md:hidden absolute top-4 right-4 text-white hover:text-gray-300">
-            ✕
-          </button>
+            <img src="{{ "/assets/imgs/logo.png" | relative_url }}" id="logo" alt="Rise Up Pizza Logo" class="py-4 px-10 md:py-4 md:px-0  md:ml-28   hidden md:block">
+            <div class="flex flex-row justify-center items-center w-full gap-1 md:gap-2 py-4 px-2 md:px-4 block md:hidden">
+                <img src="{{ "/assets/imgs/logosymbolleft.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
+                <img src="{{ "/assets/imgs/logomobile.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-2/4 object-contain">
+                <img src="{{ "/assets/imgs/logosymbolright.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
+            </div>
+            <nav class="flex flex-col justify-center md:justify-start gap-y-4 text-4xl md:text-xl lg:text-2xl uppercase md:pl-10 my-10">
+                <ul class="mx-auto md:mx-0">
+                    {% for item in site.navigation.items %}
+                        <li class="text-left">
+                        {% if page.url == item.url %}
+                            <a href="{{ site.baseurl }}{{ item.url }}" class="text-red-500 nav-hover"> ♦ {{item.title}}</a>
+                        {% else %}
+                            <a href="{{ site.baseurl }}{{ item.url }}" class="text-white nav-hover">
+                                <span class="text-red-500">➼</span> {{item.title}}
+                            </a>
+                        {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
 
-          <img src="{{ "/assets/imgs/logo.png" | relative_url }}" alt="Rise Up Pizza Logo" class="ml-20 w-64 h-64 mb-4">
 
-          <nav class="flex flex-col justify-start gap-y-2 text-sm uppercase tracking-widest mb-12">
-            <ul>
-              {% for item in site.navigation.items %}
-              <li>
-                {% if page.url == item.url %}
-                  <a href="{{ site.baseurl }}{{ item.url }}" class="text-red-500 nav-hover font-medium"> ♦ {{item.title}}</a>
-                {% else %}
-                  <a href="{{ site.baseurl }}{{ item.url }}" class="text-white nav-hover font-medium"> <span class="text-red-500">➼</span> {{item.title}}</a>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-          </nav>
 
-          <div class="px-4">
-            <span class="text-red-500">Hours</span>
-            <ul>
-              <li>Mon</li>
-              <li>Tue</li>
-              <li>Wed</li>
-              <li>Thu</li>
-              <li>Fri</li>
-              <li>Sat</li>
-              <li>Sun</li>
-            </ul>
+            <div class="flex flex-col justify-start gap-y-4  md:pl-10 mb-6"">
+                <div class="w-3/4 border-t-2 mx-auto md:mx-0 border-red-500 border-dashed"></div>
+                <div class="flex flex-row justify-between md:flex-col mx-auto md:mx-0 gap-8">
+                    <div>
+                        <span class="text-red-500 text-4xl md:text-2xl">Hours</span>
+                        <ul>
+                            {% for day in site.openhours %}
+                                {% for pair in day %}
+                                    <li>
+                                        <span>
+                                            {{ pair[0] }}:
+                                        </span>
+                                        <span>
+                                            {{ pair[1] }}
+                                        </span>
+                                    </li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="text-red-500 text-4xl md:text-2xl">Address</span>
+                        <br>
+                        471 Jefferson St, <br>Lexington, KY 40508<br>
+                        <a href="https://www.google.com/maps/dir//471+Jefferson+St,+Lexington,+KY+40508/@38.0513494,-84.5023556,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x884244f692bc4325:0x3d869cf38ea75593!2m2!1d-84.4947573!2d38.0579769?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D" class="text-red-500 hover:underline bold">
+                          <span class="text-red-500 text-2xl md:text-2xl">Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-            471 Jefferson St, <br>Lexington, KY 40508<br>
-            <a href="https://www.google.com/maps/dir//471+Jefferson+St,+Lexington,+KY+40508/@38.0513494,-84.5023556,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x884244f692bc4325:0x3d869cf38ea75593!2m2!1d-84.4947573!2d38.0579769?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D" class="text-red-500">
-              <strong>Get Directions</strong>
-            </a>
-          </div>
-        </aside>
-</aside>
-
+        </div>
+    </aside>
+</div>
 {% if page.url == "/" %}
 {% else %}
-<img src="{{ "/assets/imgs/sidebar.jpg" | relative_url }}" alt="Rise Up Pizza Logo" class="w-30">
-{% endif %}
 
-</div>
+<img src="{{ "/assets/imgs/sidebar.jpg" | relative_url }}" alt="Rise Up Pizza Logo" id="sidebarImage" class="object-cover hidden md:block md:w-48 lg:w-96">
+    {% endif %}
