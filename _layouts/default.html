@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   {% include head.html %}
-  <body class="bg-black flex flex-row justify-center font-myriad text-white min-h-screen"  data-is-homepage="{% if page.url == '/' %}true{% else %}false{% endif %}">
+  <body class="bg-black flex flex-row  justify-center font-myriad text-white min-h-screen"  data-is-homepage="{% if page.url == '/' %}true{% else %}false{% endif %}">
 
     {% include nav_buttons.html %}
     {% include sidebar.html %}
-
-    <main id="main" class="h-full flex flex-col justify-center items-center w-full">
-        <div>
-        <div class="flex flex-row w-full gap-1 md:gap-2 py-4 px-2 md:px-4 block md:hidden">
-            <img src="{{ "/assets/imgs/logosymbolleft.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
-            <img src="{{ "/assets/imgs/logomobile.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-2/4 object-contain">
-            <img src="{{ "/assets/imgs/logosymbolright.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 md:h-32 w-1/4 object-contain">
-        </div>
-        </div>
-
-
-        <img src="{{ "/assets/imgs/mobileheader.jpg" | relative_url }}" alt="an image of Delicious Pizza" class="md:ml-32 block md:hidden w-full h-auto">
-        {% if page.url == '/' %}<div
-            class="flex flex-col h-screen">
-                <img src="{{ "/assets/imgs/shop.png" | relative_url }}" id="logo" alt="image of the restaurant" class="object-cover w-full h-full">
+    {% unless page.url == "/" %}
+        <img src="{{ "/assets/imgs/sidebar.jpg" | relative_url }}" alt="Rise Up Pizza Logo" id="sidebarImage" class="object-cover hidden md:block md:w-48 min-h-screen lg:w-96">
+    {% endunless %}
+        <main id="main" class="min-h-screen flex flex-col items-start w-full">
+            <!-- Sticky header for mobile -->
+            <div id="mobileHeader" class="sticky top-0 z-10 bg-black w-full block md:hidden transition-all duration-300">
+                <!-- Logo row - centered and bunched together -->
+                <div class="relative z-10">
+                    <div class="flex flex-row items-center justify-center w-full py-3">
+                        <img src="{{ "/assets/imgs/logosymbolleft.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-20 object-contain">
+                        <img src="{{ "/assets/imgs/logomobile.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-24 mx-1 object-contain">
+                        <img src="{{ "/assets/imgs/logosymbolright.png" | relative_url }}" alt="Rise Up Pizza Logo" class="h-20 object-contain">
+                    </div>
+                </div>
             </div>
-            {% endif %}
-        <div class="w-full pt-14 pl-12 flex flex-col">
-        <h1 class="text-4xl text-red-500 font-myriad"> {% unless page.url == '/' %} {{page.title}}{% endunless %}   </h1>
-      {{ content }}
-        </div>
+
+            <!-- Mobile header image container with gradient fade -->
+            <!-- Mobile header image container with gradient fade -->
+            <div id="mobileHeaderContainer" class="relative md:ml-32 block md:hidden w-full transition-all duration-500 ease-out">
+                <img id="mobileHeaderImage" src="{{ "/assets/imgs/mobileheader.jpg" | relative_url }}" alt="an image of Delicious Pizza" class="w-full h-auto transition-all duration-500 ease-out">
+                <!-- Permanent gradient at top (always visible) -->
+                <div class="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black via-black/15 via-25% to-transparent pointer-events-none"></div>
+                <!-- Permanent gradient at bottom (always visible) - less intense -->
+                <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black via-black/15 via-15% to-transparent pointer-events-none"></div>
+                <!-- Gradient overlay that fades in on scroll -->
+                <div id="headerGradient" class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 transition-opacity duration-500 ease-out"></div>
+            </div>
+
+
+
+
+
+
+
+
+        {% if page.url == '/' %}
+            <div class="flex flex-col overflow-visible min-h-screen">
+                <img src="{{ "/assets/imgs/shop.png" | relative_url }}" id="logo" alt="image of the restaurant" class="object-cover fixed min-h-screen">
+            </div>
+        {% endif %}
+
+        <!-- Mobile page title - sticky below logo -->
+        {% unless page.url == '/' %}
+            <h1 id="mobilePageTitle" class="text-5xl text-red-500 bg-black w-full font-myriad py-4 px-6 pb-3 z-20 block md:hidden sticky">
+                {{page.title}}
+            </h1>
+        {% endunless %}
+
+        <!-- Main content area -->
+            <!-- Desktop page title -->
+            <h1 class="text-4xl text-red-500 w-full pl-10 pt-24 pb-6 font-myriad hidden  {% unless page.url == '/' %}md:block{% endunless %}">
+                {% unless page.url == '/' %}{{page.title}}{% endunless %}
+            </h1>
+            {{ content }}
     </main>
 
     <div id="overlay" class="fixed inset-0 bg-black z-20 hidden md:hidden"></div>

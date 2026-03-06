@@ -2,4 +2,8 @@
 layout: default
 ---
 
-<div class="w-3/4 max-w-4xl p-8 space-y-6 font-myriad mb-6">{{content}}</div>
+<div class="md:w-[50vw] pl-10 max-w-4xl pr-8 space-y-6 font-myriad mb-6">    {{content}}
+    <div class="md:h-[80vh] md:overflow-y-auto no-scrollbar z-0">
+        {% include gallery.html folder="/assets/imgs/pizza" %}
+    </div>
+</div>

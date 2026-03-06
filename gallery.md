@@ -1,6 +1,5 @@
 ---
-title: Pizza Gallery
+title: Gallery
 permalink: "/gallery"
 layout: gallery
 ---
-
