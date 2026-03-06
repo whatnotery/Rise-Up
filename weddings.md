@@ -4,15 +4,14 @@ permalink: "/weddings"
 layout: form
 ---
 
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
-Lorem ipsum about catering weddings
+lorem ipsum about catering events 
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events

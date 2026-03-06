@@ -1,3 +1,6 @@
 #!/bin/sh
 
-bundle exec jekyll serve --livereload
+# Kill any existing process on port 4000
+lsof -ti:4000 | xargs kill -9 2>/dev/null
+
+bundle exec jekyll serve --livereload --livereload-port 35730

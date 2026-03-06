@@ -4,8 +4,10 @@ permalink: "/catering"
 layout: form
 ---
 
-lorem ipsum about catering events lorem ipsum about catering events
-lorem ipsum about catering eventslorem ipsum about catering events
+lorem ipsum about catering events 
+lorem ipsum about catering events
+lorem ipsum about catering events
+lorem ipsum about catering events
 lorem ipsum about catering events
 lorem ipsum about catering events
 lorem ipsum about catering events
