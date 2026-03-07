@@ -8,9 +8,7 @@ layout: default
 
     <div class="grid text-left pl-8 grid-cols-1 md:grid-cols-2 gap-8">
            {% assign has_events = false %}
-           {% ical url:
-        'https://calendar.proton.me/api/calendar/v1/url/tPrMhqWn06Y5fwJLhnZ5_DWQIZM8V-Ger7gk8FmgcGVv6Se2XW8vJsXA5xAY6ouPRyxpdPJh9Ax4sf2mN0Z9oA==/calendar.ics?CacheKey=wjc95WKdJLQTbvjURupIxw%3D%3D&PassphraseKey=SVqlYHAtNBn7j_vE4LZTy_ETog3RBQYxMluvYyolOAs%3D'
-        after_date: yesterday limit: 4 %}
+           {% ical url: {{site.calendar_link}} after_date: yesterday limit: 4 %}
         {% assign has_events = true %}
         <div class="space-y-4 pl-8">
             <h2 class="text-4xl text-red-500">{{ event.summary }}</h2>
