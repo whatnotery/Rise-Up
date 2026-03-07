@@ -14,13 +14,13 @@ collections:
     output: true
 url: https://whatnotery.github.io/
 baseurl: "/Rise-Up"
+tagline: 
 description: Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for Google search
   results) and in your feed.xml site description.
-plugins:
-- jekyll-postcss
-- jekyll-ical-tag
-- jekyll-seo-tag
+social:
+- https://www.facebook.com/riseuppizzatruck/
+- https://www.instagram.com/riseuppizza
 navigation:
   items:
   - title: Home
@@ -49,6 +49,10 @@ sass:
   sourcemap: never
 postcss:
   cache: false
+plugins:
+- jekyll-postcss
+- jekyll-ical-tag
+- jekyll-seo-tag
 exclude:
 - ".gitignore"
 - bin
