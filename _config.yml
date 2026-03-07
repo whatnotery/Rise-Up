@@ -4,11 +4,8 @@ timezone: UTC
 collections:
   menu:
     title: Menu
-    output: true
+    output: false
     permalink: "/menu"
-  posts:
-    title: Posts
-    output: true
   uploads:
     title: Uploads
     output: true
