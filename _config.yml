@@ -5,6 +5,7 @@ collections:
   menu:
     title: Menu
     output: true
+    permalink: "/menu"
   posts:
     title: Posts
     output: true
