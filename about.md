@@ -1,6 +1,8 @@
 ---
 title: About
 permalink: "/about"
+description: 
+image: 
 layout: about
 ---
 
