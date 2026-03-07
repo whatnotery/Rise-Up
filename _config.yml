@@ -2,6 +2,9 @@
 title: Rise Up! Pizza
 timezone: UTC
 collections:
+  menu:
+    title: Menu
+    output: true
   posts:
     title: Posts
     output: true
