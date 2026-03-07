@@ -6,12 +6,20 @@ collections:
     title: Menu
     output: false
     permalink: "/menu"
+  posts:
+    title: Posts
+    output: true
   uploads:
     title: Uploads
     output: true
+defaults:
+- scope:
+    path: ''
+  values:
+    image: "/assets/imgs/logo.png"
 url: https://whatnotery.github.io/
 baseurl: "/Rise-Up"
-tagline:
+tagline: 
 description: Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for Google search
   results) and in your feed.xml site description.
@@ -62,8 +70,3 @@ exclude:
 keep_files:
 - assets/css/tailwind.css
 - assets/css/tailwind.css.map
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/imgs/logo.png
