@@ -1,6 +1,8 @@
 ---
 title: Event Catering
 permalink: "/catering"
+description: 
+image: 
 layout: form
 ---
 
