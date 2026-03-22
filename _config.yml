@@ -76,3 +76,9 @@ defaults:
       path: ""
     values:
       image: /assets/imgs/logo.png
+  - scope:
+      path: ""
+      type: "menu"
+      values:
+        price: ""
+        order: ""
