@@ -48,7 +48,7 @@ jobs:
           bundle install
           # Install npm packages if package.json exists
           if [ -f "package.json" ]; then
-            npm ci
+            npm ci --no-optional
           fi
 
       - name: Build Jekyll site
