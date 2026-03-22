@@ -4,19 +4,16 @@ on:
   schedule:
     - cron: "0 */6 * * *"
   push:
-    branches: ["main"] # Chasge to your default branch if different
+    branches: ["main"]
   pull_request:
     branches: ["main"]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -31,23 +28,30 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3" # Use Ruby version compatible with your Jekyll setup
+          ruby-version: "3.3"
           bundler-cache: true
 
-      - name: Setup Node.js (if needed for assets)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
           cache: "npm"
 
+      - name: Install npm dependencies
+        run: |
+          # Check if package.json exists and install dependencies
+          if [ -f "package.json" ]; then
+            npm ci
+          else
+            echo "No package.json found, skipping npm install"
+          fi
+
       - name: Build Jekyll site
         run: |
-          # Make the build script executable if it exists
           if [ -f "bin/build-prod" ]; then
             chmod +x bin/build-prod
             bin/build-prod
           else
-            echo "bin/build-prod not found, using standard Jekyll build"
             bundle exec jekyll build --destination _site
           fi
 
