@@ -7,9 +7,8 @@ layout: default
     '%Y-%m-%d' %}
 
     <div class="grid text-left pl-8 grid-cols-1 md:grid-cols-2 gap-8">
-           {% assign has_events = false %}
-           {% ical url: {{site.calendar_link}} after_date: yesterday limit: 4 %}
-        {% assign has_events = true %}
+        {% assign has_events = false %} {% ical url: {{site.calendar_link}}
+        after_date: yesterday limit: 4 %} {% assign has_events = true %}
         <div class="space-y-4 pl-8">
             <h2 class="text-4xl text-red-500">{{ event.summary }}</h2>
             <span class="text-3xl">@ {{ event.location}}</span><br />
@@ -23,16 +22,13 @@ layout: default
                 date: '%-I:%M %P' }}<br />
             </span>
         </div>
-    {% endical %}
-
-    {% unless has_events %}
-    <div class="col-span-2 space-y-4 py-4 pl-8">
-                   <h2 class="text-3xl text-red-500">No Upcoming Events</h2>
-                   <p class="text-2xl text-gray-300">
-                       Check back soon for our upcoming pizza events and pop-ups!
-                   </p>
-
-               </div>
-           {% endunless %}
+        {% endical %} {% unless has_events %}
+        <div class="col-span-2 space-y-4 py-4 pl-8">
+            <h2 class="text-3xl text-red-500">No Upcoming Events</h2>
+            <p class="text-2xl text-gray-300">
+                Check back soon for our upcoming pizza events and pop-ups!
+            </p>
+        </div>
+        {% endunless %}
     </div>
 </div>

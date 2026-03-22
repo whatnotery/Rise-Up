@@ -19,54 +19,66 @@ defaults:
     image: "/assets/imgs/logo.png"
 url: https://whatnotery.github.io/
 baseurl: "/Rise-Up"
-tagline: 
-description: Write an awesome description for your new site here. You can edit this
+tagline:
+description:
+  Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for Google search
   results) and in your feed.xml site description.
-calendar_link: https://calendar.proton.me/api/calendar/v1/url/tPrMhqWn06Y5fwJLhnZ5_DWQIZM8V-Ger7gk8FmgcGVv6Se2XW8vJsXA5xAY6ouPRyxpdPJh9Ax4sf2mN0Z9oA==/calendar.ics?CacheKey=wjc95WKdJLQTbvjURupIxw%3D%3D&PassphraseKey=SVqlYHAtNBn7j_vE4LZTy_ETog3RBQYxMluvYyolOAs%3D
+calendar_link: https://calendar.proton.me/api/calendar/v1/url/-QYgQXisMhWJAQvgD9qOBq8NpKVDqHSwhTk7rgranMgu7ba0FpZyGZgBcObyBd6n67a2nCBcKQ7EEgxhxdByAw==/calendar.ics?CacheKey=IyhYS6I14HHc9QXMsilZ-w%3D%3D&PassphraseKey=FYiiO7PS-SuqtSyq-tRo_MJuCKOpHtHvyNvQgaKGMQM%3D
 social:
   links:
-  - https://www.facebook.com/riseuppizzatruck/
-  - https://www.instagram.com/riseuppizza
+    - https://www.facebook.com/riseuppizzatruck/
+    - https://www.instagram.com/riseuppizza
 navigation:
   items:
-  - title: Home
-    url: "/"
-  - title: About
-    url: "/about"
-  - title: Menu
-    url: "/menu"
-  - title: Gallery
-    url: "/gallery"
-  - title: Schedule
-    url: "/schedule"
-  - title: Catering
-    url: "/catering"
-  - title: Weddings
-    url: "/weddings"
+    - title: Home
+      url: "/"
+    - title: About
+      url: "/about"
+    - title: Menu
+      url: "/menu"
+    - title: Gallery
+      url: "/gallery"
+    - title: Schedule
+      url: "/schedule"
+    - title: Catering
+      url: "/catering"
+    - title: Weddings
+      url: "/weddings"
 open_hours:
-- Monday: Closed
-- Tuesday: 11-9
-- Wednesday: 11-9
-- Thursday: 11-9
-- Friday: 11-9
-- Saturday: 11-9
-- Sunday: Closed
+  - Monday: Closed
+  - Tuesday: 11-2 | 4-9
+  - Wednesday: 11-9
+  - Thursday: 11-9
+  - Friday: 11-9
+  - Saturday: 11-9
+  - Sunday: Closed
 sass:
   sourcemap: never
 postcss:
   cache: false
 plugins:
-- jekyll-postcss
-- jekyll-ical-tag
-- jekyll-seo-tag
+  - jekyll-postcss
+  - jekyll-ical-tag
+  - jekyll-seo-tag
 exclude:
-- ".gitignore"
-- bin
-- node_modules
-- package-lock.json
-- postcss.config.js
-- README.md
+  - ".gitignore"
+  - bin
+  - node_modules
+  - package-lock.json
+  - postcss.config.js
+  - README.md
 keep_files:
-- assets/css/tailwind.css
-- assets/css/tailwind.css.map
+  - assets/css/tailwind.css
+  - assets/css/tailwind.css.map
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/imgs/logo.png
+  - scope:
+      path: ""
+      type: "menu"
+      values:
+        price: ""
+        order: ""

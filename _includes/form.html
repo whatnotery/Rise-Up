@@ -9,11 +9,7 @@
         name="access_key"
         value="df9bcfeb-3c56-48fc-9ae4-50f746d31504"
     />
-    <input
-        type="hidden"
-        name="subject"
-        value="New Inquiry about {{page.title}}"
-    />
+    <input type="hidden" name="subject" value="Rise Up Pizza {{page.title}}" />
     <input type="hidden" name="from_name" value="Rise Up {{page.title}} Form" />
     <input
         type="hidden"
@@ -103,12 +99,14 @@
             <label
                 for="event_location"
                 class="block text-sm uppercase tracking-widest mb-1"
-                >Event Location</label
+                >Event Location (town)
+                <span class="text-red-500">*</span></label
             >
             <input
                 type="text"
                 id="event_location"
                 name="event_location"
+                required
                 class="w-full bg-transparent border-b-2 border-b-red-500 border-dashed px-1 py-2 text-white placeholder-gray-400 focus:outline-none"
             />
         </div>
