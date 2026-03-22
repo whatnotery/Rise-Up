@@ -45,7 +45,7 @@ jobs:
           # Install Bundler if not present
           gem install bundler
           # Install gems from Gemfile
-          bundle install
+          bundle install --omit=optional
           # Install npm packages if package.json exists
           if [ -f "package.json" ]; then
             npm ci --no-optional
