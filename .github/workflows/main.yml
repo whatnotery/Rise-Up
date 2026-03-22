@@ -41,7 +41,7 @@ jobs:
         run: |
           # Check if package.json exists and install dependencies
           if [ -f "package.json" ]; then
-            npm ci --no-optional
+            npm ci --omit=optional
           else
             echo "No package.json found, skipping npm install"
           fi
