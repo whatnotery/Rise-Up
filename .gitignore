@@ -11,3 +11,4 @@ Gemfile.lock
 
 # JavaScript
 node_modules
+node_modules.nosync
