@@ -12,11 +12,6 @@ collections:
   uploads:
     title: Uploads
     output: true
-defaults:
-- scope:
-    path: ''
-  values:
-    image: "/assets/imgs/logo.png"
 url: https://whatnotery.github.io/
 baseurl: "/Rise-Up"
 tagline:
@@ -74,11 +69,12 @@ keep_files:
 defaults:
   - scope:
       path: ""
+      type: "pages" # Only applies to regular pages
     values:
       image: /assets/imgs/logo.png
   - scope:
       path: ""
       type: "menu"
-      values:
-        price: ""
-        order: ""
+    values:
+      order: ""
+      price: ""
