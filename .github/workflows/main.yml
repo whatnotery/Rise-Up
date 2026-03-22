@@ -40,17 +40,6 @@ jobs:
           node-version: "18"
           cache: "npm"
 
-      - name: Install dependencies
-        run: |
-          # Install Bundler if not present
-          gem install bundler
-          # Install gems from Gemfile
-          bundle install --omit=optional
-          # Install npm packages if package.json exists
-          if [ -f "package.json" ]; then
-            npm ci --no-optional
-          fi
-
       - name: Build Jekyll site
         run: |
           # Make the build script executable if it exists
