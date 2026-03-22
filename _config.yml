@@ -6,9 +6,17 @@ collections:
     title: Menu
     output: false
     permalink: "/menu"
+  posts:
+    title: Posts
+    output: true
   uploads:
     title: Uploads
     output: true
+defaults:
+- scope:
+    path: ''
+  values:
+    image: "/assets/imgs/logo.png"
 url: https://whatnotery.github.io/
 baseurl: "/Rise-Up"
 tagline:
